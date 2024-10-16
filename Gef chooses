@@ -1,0 +1,86 @@
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0, 400, 0, 300)
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Frame.BorderSizePixel = 0
+Frame.Active = true
+Frame.Draggable = true
+Frame.Parent = ScreenGui
+
+local FrameCorner = Instance.new("UICorner")
+FrameCorner.CornerRadius = UDim.new(0, 10)
+FrameCorner.Parent = Frame
+
+local Close = Instance.new("TextButton")
+Close.Size = UDim2.new(0, 40, 0, 40)
+Close.Position = UDim2.new(1, -40, 0, 0)
+Close.BackgroundTransparency = 1
+Close.Text = "×"
+Close.TextScaled = true
+Close.TextColor3 = Color3.fromRGB(150, 150, 150)
+Close.Parent = Frame
+Close.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.Position = UDim2.new(0, 0, 0.05, 0)
+Title.Text = "Chooses"
+Title.TextSize = 19
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1
+Title.Parent = Frame
+
+local Instructions = Instance.new("TextLabel")
+Instructions.Size = UDim2.new(1, 0, 0, 30)
+Instructions.Position = UDim2.new(0, 0, 0.2, 0)
+Instructions.Text = "Choose What UI Style you want"
+Instructions.TextSize = 13
+Instructions.TextColor3 = Color3.fromRGB(150, 150, 150)
+Instructions.BackgroundTransparency = 1
+Instructions.Parent = Frame
+
+-- Dr.Ray Button
+local OrionLib = Instance.new("TextButton")
+OrionLib.Size = UDim2.new(0.35, 0, 0.15, 0)
+OrionLib.Position = UDim2.new(0.1, 0, 0.7, 0)
+OrionLib.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+OrionLib.Text = "Dr.RAY"
+OrionLib.TextSize = 18
+OrionLib.TextColor3 = Color3.fromRGB(150, 150, 150)
+OrionLib.Parent = Frame
+
+local OrionLibCorner = Instance.new("UICorner")
+OrionLibCorner.CornerRadius = UDim.new(0, 5)
+OrionLibCorner.Parent = OrionLib
+
+-- KavoLib Button
+local KavoLib = Instance.new("TextButton")
+KavoLib.Size = UDim2.new(0.35, 0, 0.15, 0)
+KavoLib.Position = UDim2.new(0.55, 0, 0.7, 0)
+KavoLib.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+KavoLib.Text = "Kavo UI"
+KavoLib.TextSize = 18
+KavoLib.TextColor3 = Color3.fromRGB(150, 150, 150)
+KavoLib.Parent = Frame
+
+local KavoLibCorner = Instance.new("UICorner")
+KavoLibCorner.CornerRadius = UDim.new(0, 5)
+KavoLibCorner.Parent = KavoLib
+
+-- Dr.Ray Lib Button Click Function
+OrionLib.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JOHNGAMING23/Roblox-Gef/main/GefV1"))()
+end)
+
+-- KavoLib Button Click Function
+KavoLib.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JOHNGAMING23/Gef-Kavo-Rework/refs/heads/main/Gef%20kavo%20Rework"))()
+end)
